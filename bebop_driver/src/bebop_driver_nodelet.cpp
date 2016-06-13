@@ -160,8 +160,9 @@ BebopDriverNodelet::~BebopDriverNodelet()
 void BebopDriverNodelet::CmdVelCallback(const geometry_msgs::TwistConstPtr& twist_ptr)
 {
   try
-  {
+  { 
     bebop_twist = *twist_ptr;
+    bebop_twist.angular.z = - bebop_twist.angular.z;
 
     const bool is_bebop_twist_changed = !util::CompareTwists(bebop_twist, prev_bebop_twist);
 

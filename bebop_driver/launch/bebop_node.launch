@@ -5,5 +5,9 @@
             <param name="camera_info_url" value="package://bebop_driver/data/bebop_camera_calib.yaml" />
             <rosparam command="load" file="$(find bebop_driver)/config/defaults.yaml" />
         </node>
+	<node pkg="bebop_tools" name="image_rot" type="rotate_cam.py" />
+	<node pkg="spacenav_node" name="joystic" type="spacenav_node">
+		<remap from="spacenav/twist" to="cmd_vel" />
+	</node>
     </group>
 </launch>

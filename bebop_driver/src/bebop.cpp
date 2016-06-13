@@ -155,8 +155,8 @@ void Bebop::FrameReceivedCallback(ARCONTROLLER_Frame_t *frame, void *bebop_void_
   if (!bebop_ptr->IsConnected()) return;
 
   // TODO(mani-monaj): Param? Fetch from Drone?
-  frame->width = 640;
-  frame->height = 368;
+  frame->width = 800;
+  frame->height = 800;
 
 //  ARSAL_PRINT(ARSAL_PRINT_INFO, LOG_TAG, "In RECV FRAME");
   {
